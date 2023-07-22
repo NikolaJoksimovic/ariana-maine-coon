@@ -1,0 +1,171 @@
+@import url('https://fonts.googleapis.com/css2?family=Tektur:wght@400;500;600;700;800&display=swap');
+
+/* ***************************************************************************** */
+/* *********************** IZBRISI KOMENTARE KAD NAUCIS *********************** */
+/* ***************************************************************************** */
+:root {
+    /* Ovde definises default vrednosti koje ces kasnije da koristis pri responzivnosti i drugim stvarima..*/
+    /* Responzivnost je pravljenje sajta tako da odgovara svim dimenzijama. Npr ti to nisi imala pa ti se sve rasirilo sve na velikom ekranu.. :) */
+    /* Uglavnom ces imati 3 verzije svega.. Za veliki srednji i mali(mobilni) ekran. */
+    /* Takodje ovde stoje i osnovne boje koje koristis */
+    /* Ovo je sve da ne bi npr kad hoces da menjas boju slova na vise mesta, morala da menjas na svakom mestu zasebno. Nego, ti ces dodeliti ovde definisanu vrednost za na svim tim mestima u pocetku i onda kad ovde promenis boju, promenice se svuda. Isto vazi i za velicinu slova itd.*/
+
+    /* boje */
+    --clr-primary: #0f0f0f;
+    --clr-primary-05: #0f0f0f8a;
+    --clr-secondary: #ffffff;
+    --clr-accent: #e2d519;
+    /* velicine slova*/
+    --font-size-lg: 1.3rem;
+    --font-size-md: 1.1rem;
+    --font-size-sm: 1rem;
+    /* brzina transformacija */
+    --transition-linear-01: 0.1s linear;
+    --transition-linear-02: 0.2s linear;
+}
+
+* {
+    box-sizing: border-box;
+    /* Ovo je da kada stavljas visinu ili sirinu elementa ulaze i margine i padding Znaci kada stavis sirina 900px to ce piti 900px sa marginama i paddingom */
+    margin: 0;
+    padding: 0;
+    font-family: 'Tektur', cursive;
+    color: var(--clr-primary);
+    font-size: var(--font-size-sm);
+    font-weight: 500;
+    /* Preuzeto sa google fonts. Ovo gore @import ucitava stil slova, a font-family ga izabira*/
+}
+
+body {}
+
+a {
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+h1 {
+    width: 100%;
+    font-weight: 700;
+    margin: 1em 0;
+    padding: 0.5em 0;
+    letter-spacing: 0.1em;
+
+}
+
+p {
+    width: 100%;
+    font-weight: 400;
+    letter-spacing: 0.1em;
+}
+
+main {
+    padding: 2em;
+}
+
+.center-column {
+    /* ********* */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* OVA TRI REDA SU KAKO SE GENERALNO CENTRIRAJU STVARI NA EKRANU*/
+    /* Dodas ovu klasu u html tamo gde hoces da je element centriran */
+}
+
+.center-row {
+    /* ********* */
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    /* OVA TRI REDA SU KAKO SE GENERALNO CENTRIRAJU STVARI NA EKRANU*/
+    /* Dodas ovu klasu u html tamo gde hoces da je element centriran */
+}
+
+.max-width-1440 {
+    /* klasa koja stavlja max */
+    max-width: 1440px;
+    margin: auto;
+}
+
+.max-width-1920 {
+    /* klasa koja stavlja max */
+    max-width: 1920px;
+    margin: auto;
+}
+
+.min-heigth-100-include-navbar {
+    /* ovu klasu kada stavis na element, postavice mu minimalnu visinu 100% ekrana minus visina navabara */
+    min-height: calc(100vh - 4em);
+}
+
+#navbar-container {
+    /* padding: 1rem; */
+    /* Postoje dve mere rem i em. REM se odnosi na baznu velicinu. Kad kazes da je nesto 1REM to je obicno 16px osim ako se ne definise drugacije. Kada kazes da je nesto 1EM onda je to zapravo 1*1REM. Mozda te pitaju to. */
+    height: 4em;
+    width: 100%;
+    background-color: var(--clr-primary);
+    position: relative;
+}
+
+#navbar {
+    height: 100%;
+    width: 100%;
+    padding: 1em;
+    margin: auto;
+    box-shadow: 0px 2px 0.5rem 0.2rem var(--clr-primary-05);
+}
+
+#navbar a {
+    cursor: pointer;
+    color: var(--clr-secondary);
+    padding: 0.1em;
+    margin: 0 0.5em;
+}
+
+@media screen and (min-width: 768px) {
+    * {
+        font-size: var(--font-size-md);
+    }
+
+    /* Ovo @media.. je kako se responzivnost radi */
+    /* Ja ovde kazem da ce za ekran koji nije manji od 768px vaziti ono sto ispisem dole. Ako je manji onda ce vaziti ono iznad npr. vidis da definisem opet #navbar{} Ono iznad vazi uposte, a ovo ispod ce vaziti za sve ekrane koji nisu manji od 768px, odnosono, veci su od 768px*/
+    #navbar {
+        padding: 1.2em;
+    }
+
+    #navbar a {
+        letter-spacing: 0.1em;
+    }
+
+    #navbar a:hover {
+        transition: all var(--transition-linear-01);
+        transform: scale(1.1);
+    }
+}
+
+@media screen and (min-width: 1080px) {
+    * {
+        font-size: var(--font-size-lg);
+    }
+
+    #navbar {
+        padding: 1.3em;
+    }
+
+    #navbar a:hover {
+        transition: all var(--transition-linear-01);
+        transform: scale(1.1);
+    }
+}
+
+@media screen and (min-width: 1920px) {
+    #navbar {
+        max-width: 100%;
+    }
+
+    #navbar a {
+        margin: 0 1em;
+        letter-spacing: 0.3em;
+    }
+}
