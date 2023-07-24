@@ -23,11 +23,14 @@
     --font-size-md: 1.1rem;
     --font-size-sm: 1rem;
     /* brzina transformacija */
+    --transition-linear-005: 0.05s linear;
     --transition-linear-01: 0.1s linear;
     --transition-linear-02: 0.2s linear;
 
     --font-primary: 'Tektur', cursive;
     --font-secondary: 'Indie Flower', cursive;
+
+    --broder_015_primary: 0.15em solid var(--clr-primary)
 }
 
 * {
@@ -40,6 +43,7 @@
     font-size: var(--font-size-sm);
     font-weight: 900;
     /* Preuzeto sa google fonts. Ovo gore @import ucitava stil slova, a font-family ga izabira*/
+    scroll-behavior: smooth;
 }
 
 a {

@@ -1,0 +1,56 @@
+h3 {
+  text-transform: capitalize;
+}
+
+p {
+  text-indent: 1.5em;
+  line-height: 1.4em;
+  font-size: 0.9em;
+}
+
+.post-container {
+  position: relative;
+  padding: 0.5em;
+  margin: 1em 0;
+  border: var(--broder_015_primary);
+}
+
+.title-container {
+  justify-content: space-between;
+  padding: 0.5em 0;
+}
+
+.author {
+  font-weight: 500;
+}
+
+.content {
+  overflow: hidden;
+}
+
+.bottom-fade-overlay {
+  position: absolute;
+  width: 100%;
+  height: 3em;
+  left: 0;
+  bottom: 0;
+  background: linear-gradient(hwb(0 100% 0% / 0.301), hwb(0 100% 0% / 0.815));
+}
+
+
+.more-btn {
+  right: 0;
+  top: 0;
+  padding: 0.1em 0.2em;
+  background-color: transparent;
+  border: var(--broder_015_primary);
+  border-radius: 10%;
+  font-size: 0.8em;
+  cursor: pointer;
+  transition: var(--transition-linear-005);
+}
+
+.more-btn:hover {
+  background-color: var(--clr-primary);
+  color: var(--clr-secondary);
+}
