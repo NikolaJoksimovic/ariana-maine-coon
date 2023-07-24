@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Tektur:wght@400;500;600;700;800&display=swap');
 
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
+
 /* ***************************************************************************** */
 /* *********************** IZBRISI KOMENTARE KAD NAUCIS *********************** */
 /* ***************************************************************************** */
@@ -12,7 +14,8 @@
 
     /* boje */
     --clr-primary: #0f0f0f;
-    --clr-primary-05: #0f0f0f8a;
+    --clr-primary-05: hsla(0, 0%, 6%, 0.5);
+    --clr-primary-03: hsla(0, 0%, 6%, 0.25);
     --clr-secondary: #ffffff;
     --clr-accent: #e2d519;
     /* velicine slova*/
@@ -22,6 +25,9 @@
     /* brzina transformacija */
     --transition-linear-01: 0.1s linear;
     --transition-linear-02: 0.2s linear;
+
+    --font-primary: 'Tektur', cursive;
+    --font-secondary: 'Indie Flower', cursive;
 }
 
 * {
@@ -29,14 +35,12 @@
     /* Ovo je da kada stavljas visinu ili sirinu elementa ulaze i margine i padding Znaci kada stavis sirina 900px to ce piti 900px sa marginama i paddingom */
     margin: 0;
     padding: 0;
-    font-family: 'Tektur', cursive;
+    font-family: var(--font-primary);
     color: var(--clr-primary);
     font-size: var(--font-size-sm);
-    font-weight: 500;
+    font-weight: 900;
     /* Preuzeto sa google fonts. Ovo gore @import ucitava stil slova, a font-family ga izabira*/
 }
-
-body {}
 
 a {
     text-decoration: none;

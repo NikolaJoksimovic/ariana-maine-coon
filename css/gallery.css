@@ -1,0 +1,132 @@
+#gallery-container {
+  display: grid;
+  grid-template-columns: auto;
+  gap: 14px;
+  width: 100%;
+  height: 100% !important;
+}
+
+.img-container-gallery {
+  position: relative;
+  width: 200px;
+  height: 150px;
+  margin: auto;
+  cursor: pointer;
+  transition: var(--transition-linear-01);
+}
+
+.img-container-gallery:hover {
+  transform: scale(1.05);
+}
+
+.img-container-gallery::after {
+  /* Ovo je kad imas element i onda stavljas nakon njega nesto(odma posle njega) */
+  /* Koristi se ako npr hoces da dodas nesto sitno a ne zelis da pravis novi element u html vec samo ovako preko css-a sredis to. (Istazi malo) */
+  content: "";
+  /*Ovde definises sta dodajes, tekst ili sta vec. U nasem slucaju, dodajemo samo kao neki overlay malo tamniji preko slike i onda ne stavljas nista kao content. */
+  position: absolute;
+  /*absolute position gleda prvi roditeljski element koji ima definisanu position: relative (u ovom slucaju to je img-container) i onda u odnosu na njega gleda ovo dole sto se definise*/
+  top: 0;
+  /*pocece od skroz gore*/
+  left: 0;
+  /*od skroz levo*/
+  width: 100%;
+  /*cela sirina*/
+  height: 100%;
+  /*cela visina*/
+  background-color: var(--clr-primary-03);
+}
+
+.img-container-gallery:hover::after {
+  background-color: transparent;
+}
+
+.img-gallery {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.img-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--clr-primary-03);
+}
+
+/* Definisemo modal i kako ce izgledati slike unutar modal-a START*/
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.modal-content {
+  display: block;
+  margin: 10% auto;
+}
+
+.img-modal {
+  width: 90%;
+  height: auto;
+}
+
+/* Close button */
+.close {
+  color: #fff;
+  font-size: 30px;
+  font-weight: bold;
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  cursor: pointer;
+}
+
+.close:hover {
+  color: #ccc;
+}
+
+@media screen and (min-width: 768px) {
+  #gallery-container {
+    grid-template-columns: auto auto;
+    gap: 20px;
+    justify-content: space-evenly;
+  }
+
+  .img-container-gallery {
+    position: relative;
+    width: 300px;
+    height: 200px;
+    margin: auto;
+  }
+
+  .img-modal {
+    height: 85%;
+    width: auto;
+  }
+}
+
+@media screen and (min-width: 1080px) {
+  #gallery-container {
+    grid-template-columns: auto auto;
+    gap: 20px;
+    justify-content: space-evenly;
+  }
+
+  .img-container-gallery {
+    position: relative;
+    width: 500px;
+    height: 350px;
+    margin: auto;
+  }
+}
+
+/* Definisemo modal i kako ce izgledati slike unutar modal-a END */
